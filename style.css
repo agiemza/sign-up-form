@@ -11,10 +11,9 @@ html {
     --highlight-color: #0e95b0;
 }
 
-body {
+.root {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     background-color: rgb(250, 250, 250);
 }
 
@@ -58,7 +57,6 @@ main {
     color: gray;
 }
 
-
 form {
     width: 100%;
     background-color: white;
@@ -67,6 +65,8 @@ form {
 }
 
 label {
+    display: flex;
+    flex-direction: column;
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 500;
@@ -76,12 +76,16 @@ label {
 }
 
 .submit-button {
+    width: 15rem;
+    height: 2.5rem;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 5px;
+    box-shadow: 1px 1px 4px rgb(168, 168, 168);
     margin: 20px 0;
     background-color: var(--highlight-color);
+    font-weight: 500;
 }
 
 h1 {
@@ -98,7 +102,13 @@ p {
     letter-spacing: 0.01rem;
 }
 
-.log-in-link {
+a,
+a:visited {
+    color: gray
+}
+
+.log-in-link,
+.log-in-link:visited {
     color: var(--highlight-color);
 }
 
@@ -106,9 +116,55 @@ p {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 100%;
     margin: 10px 0;
 }
 
 input {
+    border: 1px solid gray;
+    border-radius: 3px;
     height: 1.5rem;
+}
+
+@media screen and (min-width: 950px) {
+
+    .root {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    header {
+        min-height: 100vh;
+        height: 100%;
+        width: 30%;
+        margin: 0;
+    }
+
+    .credits,
+    a,
+    a:visited {
+        color: white;
+    }
+
+    main {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    main>* {
+        padding-left: 1.5rem;
+    }
+
+    .inputs-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10%;
+        grid-row-gap: 0px;
+        padding-right: 20%;
+    }
+
+    p {
+        max-width: 70%;
+    }
 }
