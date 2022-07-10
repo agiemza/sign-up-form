@@ -41,38 +41,39 @@
             <p>
                 You <em>know</em> you want to.
             </p>
-            <form action="#">
+            <form action="#" id="registation-form">
                 <h1>Let's do this!</h1>
                 <section class="inputs-container">
                     <label for="first-name">
-                        First name
-                        <input type="text" name="first-name" id="first-name">
+                        First name *
+                        <input type="text" name="first-name" id="first-name" placeholder=" " pattern="[a-zA-Z]+" required>
                     </label>
 
-                    <label for="first-name">
+                    <label for="last-name">
                         Last name
-                        <input type="text" name="last-name" id="last-name">
+                        <input type="text" name="last-name" id="last-name" placeholder=" " pattern="[a-zA-Z]+">
                     </label>
                     <label for="email">
-                        Email
-                        <input type="email" name="email" id="email">
+                        Email *
+                        <input type="email" name="email" id="email" placeholder=" " required>
                     </label>
                     <label for="phone">
                         Phone number
-                        <input type="tel" name="phone" id="phone">
+                        <input type="tel" name="phone" id="phone" placeholder=" "
+                            pattern="(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)">
                     </label>
                     <label for="password">
-                        Password
-                        <input type="password" name="password" id="password">
+                        Password *
+                        <input type="password" name="password" id="password" placeholder=" " required>
                     </label>
                     <label for="confirm-password">
-                        Confirm password
-                        <input type="confirm-password" name="confirm-password" id="confirm-password">
+                        Confirm password *
+                        <input type="password" name="confirm-password" id="confirm-password" placeholder=" " required>
                     </label>
                 </section>
             </form>
             <div class="submit-button-container">
-                <button type="submit" class="submit-button">Create Account</button>
+                <button type="submit" class="submit-button" form="registation-form">Create Account</button>
             </div>
             <div>
                 Already have an account? <a href="#" class="log-in-link">Log in</a>
