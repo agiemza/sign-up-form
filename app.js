@@ -1,13 +1,19 @@
 const submitBtn = document.querySelector(".submit-button")
 
 submitBtn.addEventListener("click", e => {
-    e.preventDefault()
     pwd = document.querySelector("#password")
     pwdConfirm = document.querySelector("#confirm-password")
-    if(pwd.value === pwdConfirm.value) {
-        console.log("all fine")
+    if (pwd.value !== pwdConfirm.value) {
+        pwd.setCustomValidity("invalid")
+        pwd.style.borderColor="red"
+        pwdConfirm.setCustomValidity("invalid")
+        pwdConfirm.style.borderColor="red"
+        document.querySelector(".password-error").innerText = "Passwords do not match"
+        e.preventDefault()
     }
     else {
-        console.log("passwords do not match")
+        pwd.style.borderColor="#0eb041"
+        pwdConfirm.style.borderColor="#0eb041"
+        document.querySelector(".password-error").innerText = ""
     }
 })

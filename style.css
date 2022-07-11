@@ -74,6 +74,7 @@ label {
     color: black;
     margin-top: 15px;
     margin-bottom: 2px;
+    position: relative;
 }
 
 .submit-button {
@@ -145,6 +146,12 @@ input:not(:placeholder-shown):valid {
 
 input:not(:placeholder-shown):invalid {
     border-color: var(--invalid-color);
+}
+.password-error {
+    position: absolute;
+    top: 100%;
+    text-transform: none;
+    color: var(--invalid-color);
 }
 
 @media screen and (min-width: 900px) {
