@@ -69,12 +69,11 @@ label {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 500;
     color: black;
     margin-top: 15px;
     margin-bottom: 2px;
-    position: relative;
 }
 
 .submit-button {
@@ -90,6 +89,7 @@ label {
     font-weight: 500;
     cursor: pointer;
 }
+
 .submit-button:hover {
     box-shadow: 1px 1px 4px gray;
     background-color: #0c8ea8;
@@ -147,11 +147,17 @@ input:not(:placeholder-shown):valid {
 input:not(:placeholder-shown):invalid {
     border-color: var(--invalid-color);
 }
+
 .password-error {
-    position: absolute;
     top: 100%;
+    font-size: 0.7rem;
     text-transform: none;
     color: var(--invalid-color);
+}
+
+.asterisk {
+    display: inline;
+    color: red;
 }
 
 @media screen and (min-width: 900px) {
@@ -186,10 +192,14 @@ input:not(:placeholder-shown):invalid {
     .inputs-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr) 1rem;
         grid-column-gap: 10%;
         grid-row-gap: 0px;
         padding-right: 20%;
+    }
+
+    .password-error {
+        grid-column: span 2;
     }
 
     p {

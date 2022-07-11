@@ -45,8 +45,9 @@
                 <h1>Let's do this!</h1>
                 <section class="inputs-container">
                     <label for="first-name">
-                        First name *
-                        <input type="text" name="first-name" id="first-name" placeholder=" " pattern="[a-zA-Z]+" required>
+                        <span>First name <span class="asterisk">*</span></span>
+                        <input type="text" name="first-name" id="first-name" placeholder=" " pattern="[a-zA-Z]+"
+                            required>
                     </label>
 
                     <label for="last-name">
@@ -54,7 +55,7 @@
                         <input type="text" name="last-name" id="last-name" placeholder=" " pattern="[a-zA-Z]+">
                     </label>
                     <label for="email">
-                        Email *
+                        <span>Email <span class="asterisk">*</span></span>
                         <input type="email" name="email" id="email" placeholder=" " required>
                     </label>
                     <label for="phone">
@@ -63,15 +64,15 @@
                             pattern="(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)">
                     </label>
                     <label for="password">
-                        Password *
+                        <span>Password <span class="asterisk">*</span></span>
                         <input type="password" name="password" id="password" placeholder=" " required>
-                        <div class="password-error"></div>
                     </label>
 
                     <label for="confirm-password">
-                        Confirm password *
+                        <span>Confirm password <span class="asterisk">*</span></span>
                         <input type="password" name="confirm-password" id="confirm-password" placeholder=" " required>
                     </label>
+                    <div class="password-error"></div>
                 </section>
             </form>
             <div class="submit-button-container">
