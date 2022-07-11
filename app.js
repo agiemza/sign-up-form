@@ -20,23 +20,22 @@ function checkPasswordMatching() {
         setInputInvalid(pwd)
         setInputInvalid(pwdConfirm)
         document.querySelector(".password-error").innerText = "Password must be at least 8 characters long, contain at least: 1 digit, one 1 special character, one uppercase and one lowercase letter"
+        submitBtn.disabled = true
     } else if ((pwd.value !== pwdConfirm.value)) {
         setInputInvalid(pwd)
         setInputInvalid(pwdConfirm)
         document.querySelector(".password-error").innerText = "Passwords do not match"
+        submitBtn.disabled = true
     }
     else if (pwd.value === "" && pwdConfirm.value === "") {
         pwd.style.borderColor = "gray"
         pwdConfirm.style.borderColor = "gray"
         document.querySelector(".password-error").innerText = ""
-    } else {
+        submitBtn.disabled = true
+    } else if (pwd.value.match(pwdPattern) && pwdConfirm.value.match(pwdPattern) && pwd.value === pwdConfirm.value) {
         setInputValid(pwd)
         setInputValid(pwdConfirm)
         document.querySelector(".password-error").innerText = ""
+        submitBtn.disabled = false
     }
 }
-
-submitBtn.addEventListener("click", e => {
-    if (pwd.value !== pwdConfirm.value)
-        e.preventDefault()
-})

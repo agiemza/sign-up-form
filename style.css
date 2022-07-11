@@ -90,6 +90,12 @@ label {
     cursor: pointer;
 }
 
+.submit-button:disabled,
+.submit-button:disabled:hover {
+    cursor: not-allowed;
+    background-color: rgb(145, 145, 145);
+}
+
 .submit-button:hover {
     box-shadow: 1px 1px 4px gray;
     background-color: #0c8ea8;
